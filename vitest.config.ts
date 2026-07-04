@@ -4,13 +4,11 @@ import { playwright } from '@vitest/browser-playwright'
 import viteConfig from './vite.config'
 
 const commonTestConfig = {
-  setupFiles: [fileURLToPath(new URL('./src/test/setup.ts', import.meta.url))],
   globals: true,
 }
 
 export default defineConfig({
   test: {
-    ...commonTestConfig,
     root: fileURLToPath(new URL('./', import.meta.url)),
     projects: [
       /* UNIT TESTS */
