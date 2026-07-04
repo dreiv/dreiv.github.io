@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node24/tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "NodeNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["node", "@playwright/test"],
+    "rootDir": "..",
+    "skipLibCheck": true
+  },
+  "include": ["./**/*", "../src/mocks/handlers.ts"]
+}

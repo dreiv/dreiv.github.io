@@ -8,16 +8,11 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "strict": true,
 
-    // Extra safety for array and object lookups
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
 
-    // Path mapping for cleaner imports
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    "paths": { "@/*": ["./src/*"] },
 
-    // Standard tsc incremental tracking configuration
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
   }
