@@ -1,7 +1,17 @@
 import { beforeEach, expect, test } from 'vitest'
 
 beforeEach(() => {
-  document.body.innerHTML = '<div id="app"></div>'
+  document.body.innerHTML = `
+    <div id="app">
+      <header>
+        <nav id="main-nav">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#blog">Blog</a>
+        </nav>
+      </header>
+      <main id="content"></main>
+    </div>
+  `
 })
 
 test('should render structural layout and navigation links', async () => {
