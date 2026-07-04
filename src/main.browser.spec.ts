@@ -17,8 +17,6 @@ beforeEach(() => {
 test('should render structural layout and navigation links', async () => {
   await import('./main')
 
-  window.dispatchEvent(new Event('DOMContentLoaded'))
-
   const nav = document.querySelector('#app header nav')
   const portfolioLink = document.querySelector('a[href="#portfolio"]')
 
