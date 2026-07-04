@@ -4,15 +4,15 @@ beforeEach(() => {
   document.body.innerHTML = '<div id="app"></div>'
 })
 
-test('should render Hello World structural markup inside the root app node', async () => {
+test('should render structural layout and navigation links', async () => {
   await import('./main')
 
-  const heading = document.querySelector('#app main h1')
-  const paragraph = document.querySelector('#app main p')
+  window.dispatchEvent(new Event('DOMContentLoaded'))
 
-  expect(heading).toBeTruthy()
-  expect(heading?.textContent).toBe('Hello World')
+  const nav = document.querySelector('#app header nav')
+  const portfolioLink = document.querySelector('a[href="#portfolio"]')
 
-  expect(paragraph).toBeTruthy()
-  expect(paragraph?.textContent).toContain('Vanilla TypeScript portfolio boilerplate')
+  expect(nav).toBeTruthy()
+  expect(portfolioLink).toBeTruthy()
+  expect(portfolioLink?.textContent).toBe('Portfolio')
 })
