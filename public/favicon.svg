@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-  <style>
-    .a { stroke: #213547; }
-    .v { stroke: #ff6b00; }
-    @media (prefers-color-scheme: dark) { .a { stroke: #fff; } }
-  </style>
-  <path class="a" d="M4 26 L12 6 L20 26 M8 21 h8" />
-  <path class="v" d="M12 6 L20 26 L28 6" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"><style>.a{stroke:#213547}.v{stroke:#ff6b00}@media(prefers-color-scheme:dark){.a{stroke:#fff}}</style><path class="a" d="M4 26 12 6 20 26M8 21h8"/><path class="v" d="M12 6 20 26 28 6"/></svg>
