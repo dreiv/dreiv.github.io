@@ -1,5 +1,3 @@
-import './style.css'
-
 const validRoutes = ['home', 'about', 'projects', 'blog', 'contact']
 const defaultRoute = 'home'
 
@@ -10,11 +8,22 @@ const mainNav = document.getElementById('main-nav') as HTMLElement | null
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
-
     menuToggle.setAttribute('aria-expanded', (!isExpanded).toString())
     mainNav.classList.toggle('hidden')
   })
 }
+
+// --- Global Keyboard Event Listener ---
+document.addEventListener('keydown', (e) => {
+  // Close mobile menu gracefully on Escape key press
+  if (e.key === 'Escape' && mainNav && !mainNav.classList.contains('hidden')) {
+    mainNav.classList.add('hidden')
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false')
+      menuToggle.focus() // Return focus to trigger button
+    }
+  }
+})
 
 // --- Dynamic Router Logic ---
 function handleNavigation() {
@@ -25,9 +34,8 @@ function handleNavigation() {
     const section = el as HTMLElement
     if (section.id === currentRoute) {
       section.classList.remove('hidden')
-      section.classList.add('animate-in', 'fade-in', 'duration-300') // Tailwind micro-interaction
+      section.classList.add('animate-in', 'fade-in', 'duration-300')
 
-      // Accessibility (a11y) focus shift: Programmatically focus the view's primary heading
       const heading = section.querySelector('h2')
       if (heading && rawHash !== '') {
         heading.focus()
@@ -59,6 +67,4 @@ function handleNavigation() {
 
 // Intercept browser back/forward buttons and hash mutations
 window.addEventListener('hashchange', handleNavigation)
-
-// Run the routing routine on initial boot to safely catch direct deep links (e.g., site.com/#blog)
-window.addEventListener('DOMContentLoaded', handleNavigation)
+handleNavigation()
