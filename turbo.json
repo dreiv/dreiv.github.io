@@ -9,6 +9,13 @@
     },
     "format:check": {
       "cache": true
+    },
+    "build:vite": {
+      "outputs": ["dist/**"],
+      "cache": true
+    },
+    "turbo:build": {
+      "dependsOn": ["lint", "type-check", "format:check", "build:vite"]
     }
   }
 }

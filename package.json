@@ -19,7 +19,8 @@
     "test:unit": "vitest --project=unit",
     "test:browser": "vitest --project=browser",
     "test:e2e": "playwright test",
-    "build": "turbo run lint type-check format:check && vite build",
+    "build": "turbo run turbo:build",
+    "build:vite": "vite build",
     "size": "size-limit",
     "lhci": "lhci autorun"
   },

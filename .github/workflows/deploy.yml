@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
   deploy:
@@ -17,18 +17,31 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
-          cache: "npm"
+          node-version: 'lts/*'
+
+      - name: Cache Build Dependencies & Turbo
+        id: build-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .turbo
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-build-
+
+      - name: Install Dependencies
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: npm ci
 
       - name: Build
-        run: |
-          npm ci
-          npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
