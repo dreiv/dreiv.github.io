@@ -1,36 +1,34 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Developer portfolio and technical blog." />
+    <title>dreiv.github.io</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Developer portfolio and technical blog." />
-  <title>dreiv.github.io</title>
-</head>
+  <body>
+    <div id="app">
+      <header>
+        <nav id="main-nav">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#blog">Blog</a>
+        </nav>
+      </header>
 
-<body>
-  <div id="app">
-    <header>
-      <nav id="main-nav">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#blog">Blog</a>
-      </nav>
-    </header>
+      <main id="content">
+        <section id="portfolio" class="route-view">
+          <h2>Portfolio</h2>
+          <p>Engineering robust, highly optimized web architectures.</p>
+        </section>
 
-    <main id="content">
-      <section id="portfolio" class="route-view">
-        <h2>Portfolio</h2>
-        <p>Engineering robust, highly optimized web architectures. 123</p>
-      </section>
-
-      <section id="blog" class="route-view">
-        <h2>Blog</h2>
-        <p>Articles on frontend architecture and low-overhead engineering.</p>
-      </section>
-    </main>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+        <section id="blog" class="route-view">
+          <h2>Blog</h2>
+          <p>Articles on frontend architecture and low-overhead engineering.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
