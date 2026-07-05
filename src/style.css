@@ -1,71 +1,7 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  padding: 2rem;
-}
-
-#main-nav {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-#main-nav a {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#main-nav a:hover {
-  text-decoration: underline;
-}
-
-/* --- CSS SPA Routing Logic --- */
-
-.route-view {
-  display: none;
-  animation: fadeIn 0.2s ease-out;
-  scroll-margin-top: 10rem;
-}
-
-.route-view:target {
-  display: block;
-}
-
-#content:not(:has(.route-view:target)) #portfolio {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color-scheme: light dark;
   }
 }

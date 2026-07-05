@@ -4,9 +4,11 @@ beforeEach(() => {
   document.body.innerHTML = `
     <div id="app">
       <header>
-        <nav id="main-nav">
-          <a href="#portfolio">Portfolio</a>
-          <a href="#blog">Blog</a>
+        <nav aria-label="Main Navigation">
+          <ul id="main-nav">
+             <li><a href="#home" class="nav-link">Home</a></li>
+             <li><a href="#blog" class="nav-link">Blog</a></li>
+          </ul>
         </nav>
       </header>
       <main id="content"></main>
@@ -17,10 +19,10 @@ beforeEach(() => {
 test('should render structural layout and navigation links', async () => {
   await import('./main')
 
-  const nav = document.querySelector('#app header nav')
-  const portfolioLink = document.querySelector('a[href="#portfolio"]')
+  const nav = document.querySelector('nav')
+  const homeLink = document.querySelector('a[href="#home"]')
 
   expect(nav).toBeTruthy()
-  expect(portfolioLink).toBeTruthy()
-  expect(portfolioLink?.textContent).toBe('Portfolio')
+  expect(homeLink).toBeTruthy()
+  expect(homeLink?.textContent).toBe('Home')
 })
