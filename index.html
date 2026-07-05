@@ -1,57 +1,70 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Developer portfolio and technical blog." />
+    <title>dreiv.github.io</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Developer portfolio and technical blog." />
-  <title>dreiv.github.io</title>
-</head>
+  <body
+    class="bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-w-[320px] min-h-screen p-4 md:p-8 transition-colors duration-200"
+  >
+    <div id="app" class="max-w-3xl mx-auto">
+      <header class="mb-12">
+        <nav aria-label="Main Navigation">
+          <ul id="main-nav" class="flex flex-wrap gap-4 font-semibold">
+            <li><a href="#home" class="nav-link hover:underline" aria-current="page">Home</a></li>
+            <li><a href="#about" class="nav-link hover:underline">About</a></li>
+            <li><a href="#projects" class="nav-link hover:underline">Projects</a></li>
+            <li><a href="#blog" class="nav-link hover:underline">Blog</a></li>
+            <li><a href="#contact" class="nav-link hover:underline">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-<body
-  class="bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-w-[320px] min-h-screen p-4 md:p-8 transition-colors duration-200">
-  <div id="app" class="max-w-3xl mx-auto">
-    <header class="mb-12">
-      <nav aria-label="Main Navigation">
-        <ul id="main-nav" class="flex flex-wrap gap-4 font-semibold">
-          <li><a href="#home" class="nav-link hover:underline" aria-current="page">Home</a></li>
-          <li><a href="#about" class="nav-link hover:underline">About</a></li>
-          <li><a href="#projects" class="nav-link hover:underline">Projects</a></li>
-          <li><a href="#blog" class="nav-link hover:underline">Blog</a></li>
-          <li><a href="#contact" class="nav-link hover:underline">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      <main id="content">
+        <section id="home" class="route-view" aria-labelledby="home-heading">
+          <h2 id="home-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">
+            Home
+          </h2>
+          <p>Engineering robust, highly optimized web architectures.</p>
+        </section>
 
-    <main id="content">
-      <section id="home" class="route-view" aria-labelledby="home-heading">
-        <h2 id="home-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">Home</h2>
-        <p>Engineering robust, highly optimized web architectures.</p>
-      </section>
+        <section id="about" class="route-view hidden" aria-labelledby="about-heading">
+          <h2 id="about-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">
+            About
+          </h2>
+          <p>Details about my background and philosophy.</p>
+        </section>
 
-      <section id="about" class="route-view hidden" aria-labelledby="about-heading">
-        <h2 id="about-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">About</h2>
-        <p>Details about my background and philosophy.</p>
-      </section>
+        <section id="projects" class="route-view hidden" aria-labelledby="projects-heading">
+          <h2
+            id="projects-heading"
+            tabindex="-1"
+            class="text-2xl font-bold mb-4 focus:outline-none"
+          >
+            Projects
+          </h2>
+          <p>A showcase of recent work.</p>
+        </section>
 
-      <section id="projects" class="route-view hidden" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">Projects</h2>
-        <p>A showcase of recent work.</p>
-      </section>
+        <section id="blog" class="route-view hidden" aria-labelledby="blog-heading">
+          <h2 id="blog-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">
+            Blog
+          </h2>
+          <p>Articles on frontend architecture and low-overhead engineering.</p>
+        </section>
 
-      <section id="blog" class="route-view hidden" aria-labelledby="blog-heading">
-        <h2 id="blog-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">Blog</h2>
-        <p>Articles on frontend architecture and low-overhead engineering.</p>
-      </section>
-
-      <section id="contact" class="route-view hidden" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">Contact</h2>
-        <p>Let's connect.</p>
-      </section>
-    </main>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+        <section id="contact" class="route-view hidden" aria-labelledby="contact-heading">
+          <h2 id="contact-heading" tabindex="-1" class="text-2xl font-bold mb-4 focus:outline-none">
+            Contact
+          </h2>
+          <p>Let's connect.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
