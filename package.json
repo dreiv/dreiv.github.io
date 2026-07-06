@@ -9,16 +9,17 @@
     "prepare": "husky",
     "check": "turbo run lint type-check format:check check:deps",
     "check:deps": "knip",
-    "fix": "oxlint . --fix -D correctness --ignore-path .oxlintignore && eslint . --fix --cache && oxfmt . --ignore-path .oxfmtignore",
+    "fix": "oxlint . --fix -D correctness --ignore-path .oxlintignore && eslint . --fix --cache && oxfmt . --ignore-path .oxlintignore",
     "fix:lint": "oxlint . --fix -D correctness --ignore-path .oxlintignore && eslint . --fix --cache",
     "fix:format": "oxfmt . --ignore-path .oxfmtignore",
     "lint": "oxlint . --fix -D correctness --ignore-path .oxlintignore && eslint . --fix --cache",
     "type-check": "tsc --noEmit",
-    "format:check": "oxfmt --check . --ignore-path .oxfmtignore",
+    "format:check": "oxfmt --check . --ignore-path .oxlintignore",
     "test": "vitest",
     "test:unit": "vitest --project=unit",
     "test:browser": "vitest --project=browser",
     "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "build": "turbo run turbo:build",
     "build:vite": "vite build",
     "size": "size-limit",
@@ -58,12 +59,12 @@
       "vitest related --run",
       "oxfmt"
     ],
-    "*.{css,json,md}": [
+    "*.{css,json,md,html}": [
       "oxfmt"
     ]
   },
   "engines": {
     "node": "^22.12.0 || >=24.0.0"
   },
-  "packageManager": "npm@11.12.1"
+  "packageManager": "npm@11.18.0"
 }
