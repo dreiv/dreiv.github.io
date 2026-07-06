@@ -11,16 +11,15 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   verify:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'pull_request'
     name: 🛡️ Verify
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    concurrency:
+      group: verify-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -67,18 +66,39 @@ jobs:
       - name: Run E2E & Accessibility Tests
         run: npm run test:e2e
 
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
       - name: Build Production Bundle
         run: npm run build
 
       - name: Run Lighthouse Audits
         run: npm run lhci
 
+      - name: Upload Lighthouse Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 7
+
   deploy:
-    needs: verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: 🚀 Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: deploy-main
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -103,4 +123,5 @@ jobs:
           path: 'dist'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v5
