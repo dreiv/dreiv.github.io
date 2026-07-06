@@ -1,4 +1,4 @@
-name: CI/CD Portfolio Pipeline
+name: CI/CD
 
 on:
   push:
@@ -11,17 +11,12 @@ permissions:
   pages: write
   id-token: write
 
-# Avoid race conditions. If you push updates mid-run, it kills the old stale run automatically.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  # ==========================================
-  # JOB 1: VERIFICATION (Only runs on Pull Requests)
-  # ==========================================
   verify:
-    if: github.event_name == 'pull_request'
     name: 🛡️ Quality & Accessibility Verification
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -35,7 +30,6 @@ jobs:
           node-version: 'lts/*'
           cache: 'npm'
 
-      # Caches Turborepo computational artifacts across your PR commits
       - name: Cache Turbo
         uses: actions/cache@v6
         with:
@@ -47,7 +41,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
         env:
-          HUSKY: 0 # Disables husky hooks to save time in a headless execution environment
+          HUSKY: 0
 
       - name: Run Code Quality Checks & Unit Tests
         run: npm run check && npm run test:unit
@@ -78,10 +72,8 @@ jobs:
       - name: Run Lighthouse Audits
         run: npm run lhci
 
-  # ==========================================
-  # JOB 2: BUILD & DEPLOY (Only runs on Push to main)
-  # ==========================================
   deploy:
+    needs: verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: 🚀 Production Build & Deploy
     runs-on: ubuntu-latest
@@ -95,14 +87,6 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'npm'
-
-      - name: Cache Turbo
-        uses: actions/cache@v6
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
 
       - name: Install Dependencies
         run: npm ci
