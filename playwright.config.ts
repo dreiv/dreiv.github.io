@@ -12,10 +12,10 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npm run dev',
+    command: 'npm run dev -- --host 127.0.0.1',
     url: 'http://127.0.0.1:5173',
-    stdout: 'pipe', // <-- Add this to see server logs in GitHub Actions
-    stderr: 'pipe', // <-- Add this to see server errors
+    stdout: 'pipe',
+    stderr: 'pipe',
     reuseExistingServer: !process.env.CI,
   },
 
