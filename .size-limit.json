@@ -2,6 +2,6 @@
   {
     "path": "dist/index.html",
     "limit": "14 kB",
-    "brotli": true
+    "gzip": true
   }
 ]

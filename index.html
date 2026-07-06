@@ -14,28 +14,24 @@
     class="bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-w-[320px] min-h-screen flex flex-col transition-colors duration-200"
   >
     <header
-      class="max-w-3xl w-full mx-auto pt-4 sm:pt-8 px-4 sm:px-8 mb-12 relative flex items-center justify-end sm:justify-start"
+      class="max-w-3xl w-full mx-auto pt-4 sm:pt-8 px-4 sm:px-8 mb-12 relative flex justify-end"
     >
       <button
         id="menu-toggle"
-        class="sm:hidden p-2 dark:text-zinc-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 rounded z-50"
+        class="sm:hidden p-2 rounded"
         aria-expanded="false"
         aria-controls="main-nav"
-        aria-label="Toggle navigation menu"
+        aria-label="Toggle navigation"
       >
         <svg
-          class="w-6 h-6 pointer-events-none"
+          class="size-6 pointer-events-none"
           fill="none"
           stroke="currentColor"
+          stroke-width="2"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
@@ -44,23 +40,26 @@
         class="hidden absolute top-full left-0 mt-4 w-full bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-lg sm:shadow-none sm:border-none sm:static sm:block sm:bg-transparent z-40 py-4 sm:py-0 sm:mt-0"
         aria-label="Main Navigation"
       >
-        <ul
-          class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 font-semibold px-4 sm:px-0 w-full"
-        >
+        <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 font-semibold px-4 sm:px-0 w-full">
           <li>
-            <a href="#home" class="nav-link block py-2 sm:py-0 hover:underline" aria-current="page"
+            <a
+              href="#home"
+              class="nav-link block px-3 py-2 rounded hover:underline"
+              aria-current="page"
               >Home</a
             >
           </li>
           <li class="sm:ml-auto">
-            <a href="#about" class="nav-link block py-2 sm:py-0 hover:underline">About</a>
+            <a href="#about" class="nav-link block px-3 py-2 rounded hover:underline">About</a>
           </li>
           <li>
-            <a href="#projects" class="nav-link block py-2 sm:py-0 hover:underline">Projects</a>
+            <a href="#projects" class="nav-link block px-3 py-2 rounded hover:underline"
+              >Projects</a
+            >
           </li>
-          <li><a href="#blog" class="nav-link block py-2 sm:py-0 hover:underline">Blog</a></li>
+          <li><a href="#blog" class="nav-link block px-3 py-2 rounded hover:underline">Blog</a></li>
           <li>
-            <a href="#contact" class="nav-link block py-2 sm:py-0 hover:underline">Contact</a>
+            <a href="#contact" class="nav-link block px-3 py-2 rounded hover:underline">Contact</a>
           </li>
         </ul>
       </nav>
