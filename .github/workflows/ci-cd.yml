@@ -1,0 +1,104 @@
+name: CI/CD Portfolio Pipeline
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Avoid race conditions. If you push updates mid-run, it kills the old stale run automatically.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ==========================================
+  # JOB 1: VERIFICATION (Only runs on Pull Requests)
+  # ==========================================
+  verify:
+    if: github.event_name == 'pull_request'
+    name: 🛡️ Quality & Accessibility Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      # Caches Turborepo computational artifacts across your PR commits
+      - name: Cache Turbo
+        uses: actions/cache@v6
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Install Dependencies
+        run: npm ci
+        env:
+          HUSKY: 0 # Disables husky hooks to save time in a headless execution environment
+
+      - name: Run Code Quality Checks & Unit Tests
+        run: npm run check && npm run test:unit
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Run E2E & Accessibility Tests
+        run: npm run test:e2e
+
+      - name: Run Lighthouse Audits
+        run: npm run lhci
+
+  # ==========================================
+  # JOB 2: BUILD & DEPLOY (Only runs on Push to main)
+  # ==========================================
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    name: 🚀 Production Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Cache Turbo
+        uses: actions/cache@v6
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Install Dependencies
+        run: npm ci
+        env:
+          HUSKY: 0
+
+      - name: Build Production Bundle
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5
