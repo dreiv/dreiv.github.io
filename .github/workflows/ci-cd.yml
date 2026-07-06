@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   verify:
-    if: github.event_name == 'pull_request'
+    if: github.ref == 'refs/heads/main'
     name: 🛡️ Verify
     runs-on: ubuntu-latest
     timeout-minutes: 10
