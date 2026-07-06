@@ -72,6 +72,9 @@ jobs:
       - name: Run E2E & Accessibility Tests
         run: npm run test:e2e
 
+      - name: Build Production Bundle
+        run: npm run build
+
       - name: Run Lighthouse Audits
         run: npm run lhci
 
