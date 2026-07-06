@@ -50,7 +50,7 @@ jobs:
           HUSKY: 0 # Disables husky hooks to save time in a headless execution environment
 
       - name: Run Code Quality Checks & Unit Tests
-        run: npm run check && npm run test:unit
+        run: npm run check && npm run test:browser
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium firefox webkit
