@@ -17,7 +17,8 @@ concurrency:
 
 jobs:
   verify:
-    name: 🛡️ Quality & Accessibility Verification
+    if: github.event_name == 'pull_request'
+    name: 🛡️ Verify
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -75,7 +76,7 @@ jobs:
   deploy:
     needs: verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    name: 🚀 Production Build & Deploy
+    name: 🚀 Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
