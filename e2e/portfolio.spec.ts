@@ -37,16 +37,15 @@ test.describe('Portfolio Critical Journey & Accessibility', () => {
     const menuToggle = page.locator('#menu-toggle')
     const mainNav = page.locator('#main-nav')
 
-    await expect(mainNav).toHaveClass(/hidden/)
-
+    await expect(mainNav).toBeHidden()
     await menuToggle.click()
-    await expect(menuToggle).toHaveAttribute('aria-expanded', 'true')
-    await expect(mainNav).not.toHaveClass(/hidden/)
+
+    await expect(mainNav).toBeVisible()
+    await expect(page.locator('#main-nav:popover-open')).toBeVisible()
 
     await page.getByRole('link', { name: 'About' }).click()
     await expect(page.locator('#about')).toBeVisible()
 
-    await expect(menuToggle).toHaveAttribute('aria-expanded', 'false')
-    await expect(mainNav).toHaveClass(/hidden/)
+    await expect(mainNav).toBeHidden()
   })
 })

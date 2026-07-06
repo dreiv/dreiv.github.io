@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scrollbar-gutter-stable">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,13 +14,13 @@
     class="bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-w-[320px] min-h-screen flex flex-col transition-colors duration-200"
   >
     <header
-      class="max-w-3xl w-full mx-auto pt-4 sm:pt-8 px-4 sm:px-5 mb-12 relative flex justify-end"
+      class="max-w-3xl w-full mx-auto pt-4 sm:pt-8 px-4 sm:px-5 mb-12 relative flex justify-end sm:block"
     >
       <button
         id="menu-toggle"
-        class="sm:hidden p-2 rounded"
-        aria-expanded="false"
-        aria-controls="main-nav"
+        type="button"
+        popovertarget="main-nav"
+        class="[anchor-name:--nav-anchor-btn] sm:hidden p-2 rounded cursor-pointer"
         aria-label="Toggle navigation"
       >
         <svg
@@ -37,10 +37,11 @@
 
       <nav
         id="main-nav"
-        class="hidden absolute top-full left-0 mt-4 w-full bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-lg sm:shadow-none sm:border-none sm:static sm:block sm:bg-transparent z-40 py-4 sm:py-0 sm:mt-0"
+        popover
+        class="fixed inset-[unset] m-0 mt-1 w-[calc(100vw-3rem)] [position-anchor:--nav-anchor-btn] [position-area:bottom_span-left] overflow-visible bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-lg p-4 sm:static sm:block sm:mt-0 sm:p-0 sm:border-none sm:shadow-none sm:bg-transparent"
         aria-label="Main Navigation"
       >
-        <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 font-semibold px-4 sm:px-0 w-full">
+        <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 font-semibold w-full">
           <li>
             <a
               href="#home"
@@ -57,7 +58,9 @@
               >Projects</a
             >
           </li>
-          <li><a href="#blog" class="nav-link block px-3 py-2 rounded hover:underline">Blog</a></li>
+          <li>
+            <a href="#blog" class="nav-link block px-3 py-2 rounded hover:underline">Blog</a>
+          </li>
           <li>
             <a href="#contact" class="nav-link block px-3 py-2 rounded hover:underline">Contact</a>
           </li>

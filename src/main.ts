@@ -1,31 +1,9 @@
 const validRoutes = ['home', 'about', 'projects', 'blog', 'contact']
 const defaultRoute = 'home'
 
-const menuToggle = document.getElementById('menu-toggle') as HTMLButtonElement | null
 const mainNav = document.getElementById('main-nav') as HTMLElement | null
 
-// --- Mobile Menu Interaction ---
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener('click', () => {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
-    menuToggle.setAttribute('aria-expanded', (!isExpanded).toString())
-    mainNav.classList.toggle('hidden')
-  })
-}
-
-// --- Global Keyboard Event Listener ---
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && mainNav && !mainNav.classList.contains('hidden')) {
-    mainNav.classList.add('hidden')
-    if (menuToggle) {
-      menuToggle.setAttribute('aria-expanded', 'false')
-      menuToggle.focus()
-    }
-  }
-})
-
-// --- Dynamic Router Logic ---
-function handleNavigation() {
+export function handleNavigation() {
   const rawHash = window.location.hash.replace('#', '')
   const currentRoute = validRoutes.includes(rawHash) ? rawHash : defaultRoute
 
@@ -54,11 +32,10 @@ function handleNavigation() {
       }
     })
 
-    if (mainNav && !mainNav.classList.contains('hidden') && window.innerWidth < 768) {
-      mainNav.classList.add('hidden')
-      if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'false')
-      }
+    // --- Clean Programmatic Close ---
+    // If open on a mobile viewport layout, shut the popover container cleanly on link click
+    if (mainNav && window.innerWidth < 768 && mainNav.matches(':popover-open')) {
+      mainNav.hidePopover()
     }
   }
 
@@ -70,6 +47,5 @@ function handleNavigation() {
   document.startViewTransition(() => updateDOM())
 }
 
-// Intercept browser back/forward buttons and hash mutations
 window.addEventListener('hashchange', handleNavigation)
 handleNavigation()
