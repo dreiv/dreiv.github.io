@@ -52,8 +52,22 @@ jobs:
       - name: Run Code Quality Checks & Unit Tests
         run: npm run check && npm run test:unit
 
+      - name: Cache Playwright Browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium firefox webkit
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
+
+      - name: Install Playwright System Dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps
 
       - name: Run E2E & Accessibility Tests
         run: npm run test:e2e
