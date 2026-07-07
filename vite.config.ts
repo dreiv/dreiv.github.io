@@ -9,11 +9,9 @@ export default defineConfig({
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
-  css: { transformer: 'lightningcss' },
   build: {
     target: 'esnext',
     cssCodeSplit: false,
-    cssMinify: 'lightningcss',
     modulePreload: { polyfill: false },
   },
 })
