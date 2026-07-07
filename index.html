@@ -77,19 +77,17 @@
           <h1
             id="home-heading"
             tabindex="-1"
-            class="text-3xl sm:text-4xl font-bold dark:text-zinc-50 focus:outline-none"
+            class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-50 focus:outline-none"
           >
             Andrei Voicu
           </h1>
-          <p class="text-xl sm:text-2xl font-semibold text-zinc-700 dark:text-zinc-300 mb-4">
-            Senior Full-Stack Engineer
-          </p>
-          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mb-4">
+
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mb-4 max-w-2xl">
             Architecting high-performance web systems, bridging responsive, accessible interfaces
             with strictly typed backend architectures and real-time data flows.
           </p>
 
-          <ul class="flex flex-wrap justify-start gap-2" aria-label="Technical Skills">
+          <ul class="flex flex-wrap justify-start gap-2 mb-6" aria-label="Technical Skills">
             <li
               class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
             >
@@ -123,97 +121,592 @@
             <li
               class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
             >
-              Jest
-            </li>
-            <li
-              class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
-            >
               Git
             </li>
           </ul>
 
-          <div
-            class="mt-6 flex flex-col gap-4 text-zinc-700 dark:text-zinc-300 leading-relaxed text-base sm:text-lg"
+          <p
+            class="text-base sm:text-lg text-zinc-800 dark:text-zinc-200 mb-4 leading-relaxed max-w-2xl"
           >
-            <p>
-              Hi 👋 I'm <strong class="text-zinc-900 dark:text-zinc-50">Andrei</strong>, a
-              <strong class="text-zinc-900 dark:text-zinc-50">Senior Full-Stack Engineer</strong>
-              based in <strong class="text-zinc-900 dark:text-zinc-50">Timișoara, Romania</strong>.
-              I view software engineering as a cohesive, end-to-end discipline. With over
-              <strong class="text-zinc-900 dark:text-zinc-50"
-                >14 years of development experience</strong
-              >
-              in the web ecosystem, my core focus is building full-stack applications where frontend
-              rendering performance,
-              <abbr class="cursor-help" title="User Interface">UI</abbr> responsiveness,
-              accessibility, and backend architecture operate in perfect synchronization. I also
-              deeply value collaboration, and I genuinely enjoy working alongside others to build
-              great things and improve together.
-            </p>
+            Hi 👋 I'm <strong class="text-zinc-900 dark:text-zinc-50">Andrei</strong>, a Senior
+            Full-Stack Engineer based in
+            <strong class="text-zinc-900 dark:text-zinc-50">Timișoara, Romania</strong>. I view
+            software engineering as a cohesive, end-to-end discipline. With over 14 years of
+            development experience, my core focus is building full-stack applications where frontend
+            rendering performance, deep interface accessibility, and strictly typed backend
+            components operate in perfect synchronization. I also deeply value collaboration, and I
+            genuinely enjoy working alongside others to build great things.
+          </p>
 
-            <p>
-              My architectural philosophy relies heavily on strict typing (<em>TypeScript</em>),
-              modular component design (<em>React</em>, <em>Vue.js</em>, <em>Node.js</em>), and
-              real-time data delivery. Whether I am implementing
-              <abbr class="cursor-help" title="Server-Sent Events">SSE</abbr> for live dashboard
-              metrics, optimizing <em>WebSockets</em> for instant server communication, or managing
-              complex state for large-scale enterprise portals, my goal is always to minimize
-              latency and maximize system resource efficiency. I build user interfaces that are not
-              only performant but inherently inclusive, prioritizing semantic
-              <abbr class="cursor-help" title="HyperText Markup Language">HTML</abbr>, deep
-              accessibility, and flawless
-              <abbr class="cursor-help" title="User Interface">UI</abbr> responsiveness across all
-              devices.
-            </p>
-
-            <p>
-              Quality and automation are the foundations of my development lifecycle. I implement
-              strict, multi-layered testing strategies using tools like <em>Vitest</em>,
-              <em>Playwright</em>, and <em>ESLint</em> to ensure system resilience before a single
-              user touches the application. I am also deeply invested in optimizing developer
-              workflows, actively integrating local
-              <abbr class="cursor-help" title="Artificial Intelligence">AI</abbr> agents and custom
-              automation scripts to streamline processes like commits and code auditing.
-            </p>
-
-            <p>
-              Ultimately, I am driven by the mechanics of the machine. Whether I am optimizing
-              <abbr class="cursor-help" title="Video Random Access Memory">VRAM</abbr> allocation
-              for local
-              <abbr class="cursor-help" title="Artificial Intelligence">AI</abbr> inference or
-              rendering massive, paginated data sets in the browser, I build software that is
-              robust, scalable, and engineered for reality. When I step away from the keyboard, you
-              can find me staying active through sports or perfecting the hydration of a whole-wheat
-              pizza dough.
-            </p>
-
-            <p>
-              Currently, I am focused on my personal projects and open to new full-stack
-              opportunities and technical collaborations. If you're interested in working together
-              or just want to say hi, feel free to reach out!
-            </p>
-          </div>
+          <p
+            class="text-base sm:text-lg text-zinc-800 dark:text-zinc-200 mb-8 leading-relaxed max-w-2xl"
+          >
+            My architectural philosophy focuses on reducing systemic latency and converting complex
+            data pipelines into production-ready web realities—whether that means implementing
+            <abbr class="cursor-help" title="Server-Sent Events">SSE</abbr>
+            for live dashboard metrics or managing complex state for enterprise portals. I build
+            software engineered for reality, but when I step away from the keyboard, you can find me
+            staying active through sports or perfecting the hydration of a
+            <em>whole-wheat pizza dough</em>. Currently, I am focused on my personal projects and
+            open to new
+            <strong class="text-zinc-900 dark:text-zinc-50">full-stack opportunities</strong> and
+            <strong class="text-zinc-900 dark:text-zinc-50">technical collaborations</strong>.
+          </p>
         </article>
       </section>
 
       <section id="about" class="route-view hidden" aria-labelledby="about-heading">
-        <h1
-          id="about-heading"
-          tabindex="-1"
-          class="text-2xl font-bold mb-4 dark:text-zinc-50 focus:outline-none"
+        <div class="w-full mb-10">
+          <h1
+            id="about-heading"
+            tabindex="-1"
+            class="text-3xl font-bold mb-2 text-zinc-900 dark:text-zinc-50 focus:outline-none"
+          >
+            Engineering Architecture
+          </h1>
+          <p
+            class="text-zinc-800 dark:text-zinc-200 text-base sm:text-lg leading-relaxed max-w-2xl mb-8"
+          >
+            A deep look into my
+            <strong class="text-zinc-900 dark:text-zinc-50">14+ years</strong> of full-stack
+            engineering history, showing the concrete architecture, tooling setups, and metrics
+            backing my system philosophy.
+          </p>
+
+          <figure class="w-full mb-10" aria-labelledby="pipeline-caption">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-auto text-zinc-900 dark:text-zinc-100 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-800/20"
+              viewBox="0 0 800 250"
+            >
+              <defs>
+                <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width=".5"
+                    d="M30 0H0v30"
+                    opacity=".1"
+                  />
+                </pattern>
+                <filter id="glow" width="140%" height="140%" x="-20%" y="-20%">
+                  <feGaussianBlur result="blur" stdDeviation="3" />
+                  <feComposite in="SourceGraphic" in2="blur" />
+                </filter>
+              </defs>
+              <style>
+                @keyframes flow {
+                  to {
+                    stroke-dashoffset: -16;
+                  }
+                }
+                @keyframes movePacket {
+                  0% {
+                    transform: translateX(120px);
+                    opacity: 0;
+                  }
+                  10%,
+                  90% {
+                    opacity: 1;
+                  }
+                  to {
+                    transform: translateX(680px);
+                    opacity: 0;
+                  }
+                }
+                @keyframes pulse {
+                  0%,
+                  to {
+                    opacity: 1;
+                  }
+                  50% {
+                    opacity: 0.6;
+                  }
+                }
+              </style>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                d="M120 125h560"
+                class="text-zinc-300 dark:text-zinc-800"
+              />
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-dasharray="8 8"
+                stroke-width="2.5"
+                d="M120 125h560"
+                class="text-zinc-500 dark:text-zinc-500"
+                style="animation: flow 2.5s linear infinite"
+              />
+              <circle
+                cy="125"
+                r="4"
+                fill="currentColor"
+                class="text-zinc-900 dark:text-zinc-100"
+                style="animation: movePacket 6s linear infinite 0s"
+              />
+              <circle
+                cy="125"
+                r="4"
+                fill="currentColor"
+                class="text-zinc-900 dark:text-zinc-100"
+                style="animation: movePacket 6s linear infinite -2s"
+              />
+              <circle
+                cy="125"
+                r="4"
+                fill="currentColor"
+                class="text-zinc-900 dark:text-zinc-100"
+                style="animation: movePacket 6s linear infinite -4s"
+              />
+              <g transform="translate(120 125)">
+                <circle
+                  r="22"
+                  fill="currentColor"
+                  class="text-zinc-200 dark:text-zinc-800"
+                  filter="url(#glow)"
+                />
+                <circle r="14" fill="currentColor" class="text-zinc-900 dark:text-zinc-100" />
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  d="M-6-2H6M-6 2H6"
+                  class="text-zinc-200 dark:text-zinc-800"
+                />
+              </g>
+              <g transform="translate(400 125)">
+                <rect
+                  width="44"
+                  height="44"
+                  x="-22"
+                  y="-22"
+                  fill="currentColor"
+                  class="text-zinc-200 dark:text-zinc-800"
+                  filter="url(#glow)"
+                  rx="8"
+                />
+                <rect
+                  width="28"
+                  height="28"
+                  x="-14"
+                  y="-14"
+                  fill="currentColor"
+                  class="text-zinc-900 dark:text-zinc-100"
+                  rx="4"
+                  style="animation: pulse 4s ease-in-out infinite"
+                />
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="1.5"
+                  d="M-8-6H8M-8 0H8M-8 6H8"
+                  class="text-zinc-200 dark:text-zinc-800"
+                />
+              </g>
+              <g transform="translate(680 125)">
+                <circle
+                  r="22"
+                  fill="currentColor"
+                  class="text-zinc-200 dark:text-zinc-800"
+                  filter="url(#glow)"
+                />
+                <rect
+                  width="28"
+                  height="20"
+                  x="-14"
+                  y="-10"
+                  fill="currentColor"
+                  class="text-zinc-900 dark:text-zinc-100"
+                  rx="3"
+                />
+                <rect
+                  width="20"
+                  height="12"
+                  x="-10"
+                  y="-6"
+                  fill="currentColor"
+                  class="text-zinc-200 dark:text-zinc-800"
+                  rx="1"
+                />
+              </g>
+              <g
+                class="fill-zinc-900 dark:fill-zinc-50 font-bold tracking-widest"
+                font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                font-size="12"
+              >
+                <text x="120" y="75" text-anchor="middle">INGEST</text>
+                <text x="400" y="75" text-anchor="middle">REDUCE</text>
+                <text x="680" y="75" text-anchor="middle">PAINT</text>
+              </g>
+              <g
+                class="fill-zinc-800 dark:fill-zinc-200 font-semibold"
+                font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                font-size="10"
+              >
+                <text x="120" y="92" text-anchor="middle">[ DB / API ]</text>
+                <text x="400" y="92" text-anchor="middle">[ STATE ]</text>
+                <text x="680" y="92" text-anchor="middle">[ UI LOOP ]</text>
+              </g>
+              <g
+                class="fill-zinc-800 dark:fill-zinc-200 font-medium tracking-wide"
+                font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                font-size="10"
+              >
+                <text x="260" y="150" text-anchor="middle">λ ≤ 1.2ms latency</text>
+                <text x="540" y="150" text-anchor="middle">DOM batching / 0-drag</text>
+                <text x="680" y="175" text-anchor="middle">60 FPS Native</text>
+              </g>
+            </svg>
+            <figcaption
+              id="pipeline-caption"
+              class="mt-3.5 text-sm font-medium text-center text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-2xl mx-auto"
+            >
+              Streaming high-volume data into a lag-free, ultra-responsive interface.
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14" aria-label="Core Competencies">
+          <li
+            class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-800/40 flex flex-col gap-2"
+          >
+            <h2 class="font-bold text-zinc-900 dark:text-zinc-100 text-base sm:text-lg">
+              Type Safety &amp; Core Architecture
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 leading-relaxed">
+              Building modular, strictly typed architectures using <em>TypeScript</em> and
+              clean-code practices to eliminate technical debt and guarantee production
+              maintainability.
+            </p>
+          </li>
+
+          <li
+            class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-800/40 flex flex-col gap-2"
+          >
+            <h2 class="font-bold text-zinc-900 dark:text-zinc-100 text-base sm:text-lg">
+              Interface &amp; Rendering Power
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 leading-relaxed">
+              Designing high-performance interfaces that elegantly process dense datasets,
+              offloading complex computations from legacy backends while maintaining smooth
+              <abbr class="cursor-help" title="User Interface">UI</abbr> responsiveness.
+            </p>
+          </li>
+
+          <li
+            class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-800/40 flex flex-col gap-2"
+          >
+            <h2 class="font-bold text-zinc-900 dark:text-zinc-100 text-base sm:text-lg">
+              Automation &amp; System Tuning
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 leading-relaxed">
+              Optimizing development velocity by pairing rigorous automated testing cycles with
+              custom, local
+              <abbr class="cursor-help" title="Large Language Model">LLM</abbr> integrations for
+              intelligent engineering pipelines.
+            </p>
+          </li>
+        </ul>
+
+        <h2 class="text-xl sm:text-2xl font-bold mb-6 text-zinc-900 dark:text-zinc-50">
+          Professional Experience
+        </h2>
+
+        <ol
+          class="border-l border-zinc-200 dark:border-zinc-800 pl-6 ml-2 flex flex-col gap-12 relative"
         >
-          About
-        </h1>
-        <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-          Details about my technical background, philosophy, and professional experience.
-        </p>
+          <li class="reveal-block relative flex flex-col gap-2">
+            <span
+              class="absolute -left-7.75 top-1.5 size-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-50 dark:ring-zinc-900"
+              aria-hidden="true"
+            ></span>
+            <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">
+                Professional Up-Skilling
+              </h3>
+              <span class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                <time datetime="2026-01">Jan 2026</time> — Present
+              </span>
+            </header>
+            <p class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              Independent Research &amp; Full-Stack Evolution
+            </p>
+            <ul
+              class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 space-y-2 mt-1 list-disc pl-5 marker:text-zinc-400 dark:marker:text-zinc-500"
+            >
+              <li>
+                Following structured technical roadmaps to systematically expand frontend
+                engineering expertise into deep full-stack architecture and modern system design.
+              </li>
+              <li>
+                Evaluating advanced prompt engineering methods and local
+                <abbr title="Large Language Model">LLM</abbr> configurations to build highly
+                optimized workflows for code auditing, automation, and AI collaboration.
+              </li>
+              <li>
+                Utilizing systematic continuous-learning frameworks to accelerate mastery of
+                advanced full-stack paradigms and backend architecture
+              </li>
+            </ul>
+            <ul class="flex flex-wrap gap-2 mt-2" aria-label="Technical Skills">
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Clean Code
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Prompt Engineering
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Learning
+              </li>
+            </ul>
+          </li>
+
+          <li class="reveal-block relative flex flex-col gap-2">
+            <span
+              class="absolute -left-7.75 top-1.5 size-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-50 dark:ring-zinc-900"
+              aria-hidden="true"
+            ></span>
+            <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Visma</h3>
+              <span class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                <time datetime="2020-08">Aug 2020</time> — <time datetime="2026-01">Jan 2026</time>
+              </span>
+            </header>
+            <p class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              Senior Development Engineer
+            </p>
+            <ul
+              class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 space-y-2 mt-1 list-disc pl-5 marker:text-zinc-400 dark:marker:text-zinc-500"
+            >
+              <li>
+                Led a 4-person frontend team through a massive <em>Vue.js</em> rewrite of an
+                <abbr title="Enterprise Resource Planning">ERP</abbr>
+                payment module, architecting a shared component library deployed across multiple
+                teams with a strict focus on accessibility and design consistency.
+              </li>
+              <li>
+                Engineered an interactive chatbot interface allowing clients to cleanly query system
+                help documentation and pull real-time telemetry on active, processed, or pending
+                payment statuses.
+              </li>
+              <li>
+                Built robust automated invoice processing tools backed by comprehensive end-to-end
+                testing, delivering complete internationalization (<abbr
+                  title="Internationalization"
+                  >i18n</abbr
+                >) support tailored for Nordic markets.
+              </li>
+            </ul>
+            <ul class="flex flex-wrap gap-2 mt-2" aria-label="Technical Skills">
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Vue
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                TypeScript
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Vitest
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Storybook
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Playwright
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                i18n
+              </li>
+            </ul>
+          </li>
+
+          <li class="reveal-block relative flex flex-col gap-2">
+            <span
+              class="absolute -left-7.75 top-1.5 size-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-50 dark:ring-zinc-900"
+              aria-hidden="true"
+            ></span>
+            <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Ness</h3>
+              <span class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                <time datetime="2019-11">Nov 2019</time> — <time datetime="2020-08">Aug 2020</time>
+              </span>
+            </header>
+            <p class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              Senior Development Engineer
+            </p>
+            <ul
+              class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 space-y-2 mt-1 list-disc pl-5 marker:text-zinc-400 dark:marker:text-zinc-500"
+            >
+              <li>
+                Developed core feature sets across admin, teacher, and student interfaces for the
+                Pearson English platform, organizing complex catalogs of educational resources.
+              </li>
+              <li>
+                Engineered asynchronous data-loading flows to pull heavy media and video modules
+                instantly without stalling the <abbr title="User Interface">UI</abbr> runtime during
+                live lessons.
+              </li>
+              <li>
+                Built the interactive tools necessary for instructors to conduct live virtual
+                classes, distribute tests, and manage student grading workflows.
+              </li>
+            </ul>
+            <ul class="flex flex-wrap gap-2 mt-2" aria-label="Technical Skills">
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Angular
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Jest
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Node.js
+              </li>
+            </ul>
+          </li>
+
+          <li class="reveal-block relative flex flex-col gap-2">
+            <span
+              class="absolute -left-7.75 top-1.5 size-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-50 dark:ring-zinc-900"
+              aria-hidden="true"
+            ></span>
+            <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Haufe</h3>
+              <span class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                <time datetime="2012-08">Aug 2012</time> — <time datetime="2019-11">Nov 2019</time>
+              </span>
+            </header>
+            <p class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              Development Engineer
+            </p>
+            <ul
+              class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 space-y-2 mt-1 list-disc pl-5 marker:text-zinc-400 dark:marker:text-zinc-500"
+            >
+              <li>
+                Built an e-learning platform in <em>React</em> featuring video tutorials paired with
+                searchable transcripts, utilizing a mobile-first design system.
+              </li>
+              <li>
+                Developed a customizable <em>Angular</em> dashboard enabling corporate attorneys to
+                cleanly parse legislation variations side-by-side with expert notes.
+              </li>
+              <li>
+                Re-engineered over 200 highly used tools handling complex German salary and taxation
+                calculations off a legacy backend into lightweight client applications, simplifying
+                intricate compliance tasks for an appreciative user base.
+              </li>
+            </ul>
+            <ul class="flex flex-wrap gap-2 mt-2" aria-label="Technical Skills">
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                React
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Angular
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Node.js
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Docker
+              </li>
+            </ul>
+          </li>
+
+          <li class="reveal-block relative flex flex-col gap-2">
+            <span
+              class="absolute -left-7.75 top-1.5 size-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-zinc-50 dark:ring-zinc-900"
+              aria-hidden="true"
+            ></span>
+            <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">
+                Polytechnic University, <span class="location">Timișoara</span>
+              </h3>
+              <span class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                <time datetime="2008-09">Sept 2008</time> — <time datetime="2012-06">Jun 2012</time>
+              </span>
+            </header>
+            <p class="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              Bachelor's Degree in Computer Science
+            </p>
+            <p class="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 leading-relaxed">
+              Rigorous computer science curriculum centered on solid programming, software
+              architecture basics, hardware fundamentals, and practical skills for professional
+              software development.
+            </p>
+            <ul class="flex flex-wrap gap-2 mt-2" aria-label="Technical Skills">
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Hardware
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Software
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Java
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                C#
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                <abbr title="Structured Query Language">SQL</abbr>
+              </li>
+              <li
+                class="px-2.5 py-1 bg-zinc-200 dark:bg-zinc-800 text-xs sm:text-sm font-medium rounded-md text-zinc-800 dark:text-zinc-200"
+              >
+                Web
+              </li>
+            </ul>
+          </li>
+        </ol>
       </section>
 
       <section id="projects" class="route-view hidden" aria-labelledby="projects-heading">
         <h1
           id="projects-heading"
           tabindex="-1"
-          class="text-2xl font-bold mb-4 dark:text-zinc-50 focus:outline-none"
+          class="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 focus:outline-none"
         >
           Projects
         </h1>
@@ -226,7 +719,7 @@
         <h1
           id="blog-heading"
           tabindex="-1"
-          class="text-2xl font-bold mb-4 dark:text-zinc-50 focus:outline-none"
+          class="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 focus:outline-none"
         >
           Blog
         </h1>
@@ -240,7 +733,7 @@
         <h1
           id="contact-heading"
           tabindex="-1"
-          class="text-2xl font-bold mb-4 dark:text-zinc-50 focus:outline-none"
+          class="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 focus:outline-none"
         >
           Contact
         </h1>
