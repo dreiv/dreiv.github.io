@@ -7,7 +7,7 @@ beforeEach(() => {
         <nav aria-label="Main Navigation">
           <ul id="main-nav">
              <li><a href="#home" class="nav-link">Home</a></li>
-             <li><a href="#blog" class="nav-link">Blog</a></li>
+             <li><a href="#about" class="nav-link">About</a></li>
           </ul>
         </nav>
       </header>

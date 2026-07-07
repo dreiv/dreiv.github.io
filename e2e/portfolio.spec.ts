@@ -22,10 +22,6 @@ test.describe('Portfolio Critical Journey & Accessibility', () => {
     a11yResults = await makeAxeBuilder().analyze()
     expect(a11yResults.violations).toHaveLength(0)
 
-    await page.getByRole('link', { name: 'Blog' }).click()
-    await expect(page).toHaveURL(/#blog/)
-    await expect(page.locator('#blog')).toBeVisible()
-
     a11yResults = await makeAxeBuilder().analyze()
     expect(a11yResults.violations).toHaveLength(0)
   })

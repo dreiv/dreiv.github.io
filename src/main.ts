@@ -1,4 +1,4 @@
-const validRoutes = ['home', 'about', 'projects', 'blog', 'contact']
+const validRoutes = ['home', 'about', 'projects', 'contact']
 const defaultRoute = 'home'
 
 const mainNav = document.getElementById('main-nav') as HTMLElement | null
