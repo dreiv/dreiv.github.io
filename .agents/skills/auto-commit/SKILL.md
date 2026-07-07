@@ -1,7 +1,7 @@
 ---
 name: auto-commit
 description: Stages changes, analyzes the diff to generate a Conventional Commit message, and waits for explicit user approval before committing.
-tools: ["#terminal"]
+tools: ['#terminal']
 ---
 
 # Skill: Auto Commit

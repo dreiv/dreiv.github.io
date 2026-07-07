@@ -1,7 +1,7 @@
 ---
 name: WorkspaceAgent
 description: Developer assistant for managing the dreiv.github.io repo.
-tools: ["#terminal", "#codebase"]
+tools: ['#terminal', '#codebase']
 skills:
   - auto-commit
 ---

@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
-import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
-import { playwright } from '@vitest/browser-playwright'
+import { mergeConfig, defineConfig, configDefaults } from 'vite-plus'
+import { preview } from '@vitest/browser-preview' // Automatically available via vite-plus
 import viteConfig from './vite.config'
 
 export default defineConfig({
@@ -28,9 +28,8 @@ export default defineConfig({
             include: ['src/**/*.browser.{test,spec}.ts'],
             browser: {
               enabled: true,
-              provider: playwright(),
+              provider: preview(), // 🌟 Call it as a factory function here
               instances: [{ browser: 'chromium' }],
-              headless: true,
             },
           },
         }),
