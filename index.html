@@ -72,7 +72,7 @@
       id="content"
       class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-8 [view-transition-name:main-content]"
     >
-      <section id="home" class="route-view" aria-labelledby="home-heading">
+      <section id="home" class="route-view hidden" aria-labelledby="home-heading">
         <article class="flex flex-col items-start text-left gap-2 w-full">
           <h1
             id="home-heading"
@@ -726,17 +726,65 @@
         </p>
       </section>
 
-      <section id="contact" class="route-view hidden" aria-labelledby="contact-heading">
-        <h1
-          id="contact-heading"
-          tabindex="-1"
-          class="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 focus:outline-none"
-        >
-          Contact
-        </h1>
-        <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-          Have a question or looking to collaborate? Reach out here.
-        </p>
+      <section id="contact" class="route-view hidden w-full" aria-labelledby="contact-heading">
+        <article class="flex flex-col items-start text-left gap-2 w-full">
+          <h1
+            id="contact-heading"
+            tabindex="-1"
+            class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-50 focus:outline-none mb-2"
+          >
+            Contact
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl">
+            Have a question, looking to collaborate, or just want to say hi? Feel free to reach out.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl">
+            <a
+              href="mailto:dreivoicu@gmail.com"
+              class="group flex flex-col justify-between p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-800/20 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              aria-label="Send an email to inquire about hiring opportunities"
+            >
+              <div>
+                <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">Hire me</h2>
+                <p
+                  class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed"
+                >
+                  Open to freelance and full-time opportunities. Let's build something great
+                  together.
+                </p>
+              </div>
+              <div class="flex items-center text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                dreivoicu@gmail.com
+                <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/sponsors/dreiv"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col justify-between p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-800/20 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              aria-label="Sponsor my open-source work on GitHub"
+            >
+              <div>
+                <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">
+                  Sponsor me
+                </h2>
+                <p
+                  class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed"
+                >
+                  Support my open-source contributions and personal projects on GitHub.
+                </p>
+              </div>
+              <div class="flex items-center text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                github.com/sponsors/dreiv
+                <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </a>
+          </div>
+        </article>
       </section>
     </main>
 
