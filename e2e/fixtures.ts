@@ -1,9 +1,9 @@
-import { test as base, expect } from '@playwright/test'
-import { AxeBuilder } from '@axe-core/playwright'
+import { test as base, expect } from '@playwright/test';
+import { AxeBuilder } from '@axe-core/playwright';
 
 type MyFixtures = {
-  makeAxeBuilder: () => AxeBuilder
-}
+  makeAxeBuilder: () => AxeBuilder;
+};
 
 export const test = base.extend<MyFixtures>({
   makeAxeBuilder: async ({ page }, use) => {
@@ -14,10 +14,10 @@ export const test = base.extend<MyFixtures>({
         'wcag21a',
         'wcag21aa',
         'best-practice',
-      ])
+      ]);
 
-    await use(makeAxeBuilder)
+    await use(makeAxeBuilder);
   },
-})
+});
 
-export { expect }
+export { expect };

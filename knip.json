@@ -1,7 +1,5 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["src/main.ts", "vite.config.ts", "vitest.config.ts", "playwright.config.ts"],
-  "project": ["src/**/*.ts", "e2e/**/*.ts"],
-  "ignoreDependencies": ["eslint-plugin-playwright", "vitest"],
-  "ignoreBinaries": ["size-limit", "lhci"]
+  "entry": ["src/main.ts", "vite.config.ts"],
+  "project": ["src/**/*.{ts,css}", "e2e/**/*.ts"]
 }

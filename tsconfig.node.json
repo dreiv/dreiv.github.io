@@ -3,11 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["vite.config.*", "vitest.config.*", "playwright.config.*"]
+  "include": ["vite.config.ts", "playwright.config.ts"]
 }
