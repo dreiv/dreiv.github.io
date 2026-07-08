@@ -1,7 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["env.d.ts"],
-  "project": ["src/**/*.ts"],
-  "ignoreDependencies": ["lint-staged", "@axe-core/playwright"],
-  "ignoreExportsUsedInFile": true
+  "project": ["src/**/*.{ts,css}", "e2e/**/*.ts"],
+  "ignore": ["src/style.css"],
+  "ignoreDependencies": ["tailwindcss"]
 }

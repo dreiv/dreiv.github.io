@@ -14,7 +14,6 @@ coverage
 playwright-report
 test-results
 *.local
-.turbo
 .lighthouseci
 
 # Environment Variables
@@ -27,7 +26,6 @@ test-results
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.eslintcache
 .idea
 .DS_Store
 *.suo
@@ -35,4 +33,3 @@ test-results
 *.njsproj
 *.sln
 *.sw?
-

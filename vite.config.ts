@@ -1,17 +1,19 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-import { viteSingleFile } from 'vite-plugin-singlefile'
+import { defineConfig } from 'vite-plus';
+import tailwindcss from '@tailwindcss/vite';
+import { playwright } from '@vitest/browser-playwright';
+import { viteSingleFile } from 'vite-plugin-singlefile';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(), viteSingleFile()],
-  resolve: {
-    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+  staged: { '*': 'vp check --fix' },
+  fmt: { singleQuote: true },
+  lint: { options: { typeAware: true, typeCheck: true } },
+  plugins: [tailwindcss(), viteSingleFile()] as never,
+  test: {
+    browser: {
+      enabled: true,
+      provider: playwright() as never,
+      instances: [{ browser: 'chromium', headless: true }],
+    },
+    include: ['src/**/*.spec.ts'],
   },
-  build: {
-    target: 'esnext',
-    cssCodeSplit: false,
-    modulePreload: { polyfill: false },
-  },
-})
+});
